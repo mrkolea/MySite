@@ -3,17 +3,14 @@ session_start();
 include ("dbconnection.php");
 include ("functions.php");
 $error = null;
-//init variables from register form
 $fname = $_POST['fname'];
 $lname = $_POST['lname'];
 $email = $_POST['email'];
 $password = $_POST['password'];
-//generate new creditial for new user
 $user_id = random_id(10);
 $hash = md5( rand(0,1000) );
-//verify register input 
 if (isset($fname) && isset($lname) && isset($email) && isset($password)) {
-        //validate data from register inputs
+
         if (empty($fname) || is_numeric($fname)){
             $error['fnameErr'] = "Insert first name only leters";
         }
@@ -39,14 +36,14 @@ if (isset($fname) && isset($lname) && isset($email) && isset($password)) {
             $error['passwordErr'] = "Use minimum 8 characters for password";
         }
         else
-        {   //verify if user exist
+        {
             $sql = "SELECT * FROM users WHERE email='$email' LIMIT 1";
             $result = mysqli_query($con, $sql);
             if (mysqli_num_rows($result) > 0)
             {
                 $error['emailErr'] = 'This email is registred.';
                 
-            } //if user not exist, create new
+            }
             if (mysqli_num_rows($result) == 0)
             {   
                 $pwdhash = password_hash($password, PASSWORD_DEFAULT);
@@ -54,7 +51,7 @@ if (isset($fname) && isset($lname) && isset($email) && isset($password)) {
                 mysqli_query($con, $sql);
 
 
-                //mail template for validate
+                
                 $to      = $email; 
                 $subject = 'Activate testmurza.online account'; 
                 $message = '
@@ -86,7 +83,7 @@ if (isset($fname) && isset($lname) && isset($email) && isset($password)) {
 
 
 
-<!---- template for show erros-->
+<!---->
 <!DOCTYPE html>
 <html lang="en">
 <head>

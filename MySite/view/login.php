@@ -1,4 +1,10 @@
 <?php
+// if(isset($_GET['verify-mail']) == "true"){
+//     $email = $_GET['email']; 
+//     $hash = $_GET['hash']; 
+//     header("Location: ../controller/verify-mail.php?" . "email=" . $email . "hash=" . $hash); 
+// }
+
 ?>
 
 <!DOCTYPE html>
