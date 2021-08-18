@@ -1,62 +1,65 @@
 # MySite
-This is a simple site with register,login,password_reset > form, include email validation after register and in password reset process.
-Is developed in Xampp on localmashine
-Some instructions for up site on your mashine if you use windows os
+This is a simple site with register,login,password_reset > form, include email validation after register and in password reset process. \
+```Is developed in Xampp on localmashine``` \
+```Some instructions for up site on your mashine if you use windows os``` \
+
 
 1.
-  Setup Apache "hhtpd.conf":
-  Need to find and redact:
-  //(if you install xampp in another path set your path)
-  DocumentRoot "C:/xampp/htdocs/MySite" 
-  <Directory "C:/xampp/htdocs/MySite">
+  &emsp;&emsp;Setup Apache ```httpd.conf``` \
+  &emsp;&emsp;Need to find and redact: \
+  &emsp;&emsp;```<!--if you install xampp in another path set your path-->``` \
+  &emsp;&emsp;DocumentRoot "C:/xampp/htdocs/MySite" \
+  &emsp;&emsp;<Directory "C:/xampp/htdocs/MySite"> 
 
 2.
-  Setup Apache "php.ini":
-  Need to find and redact after [mail function]:
-  SMTP=smtp.gmail.com
-  smtp_port=465
-  sendmail_from = testmurzanicolae@gmail.com
-  //(if you install xampp in another path set your path)
-  sendmail_path = "\"C:\xampp\sendmail\sendmail.exe\" -t" 
-
+  &emsp;&emsp;Setup Apache ```php.ini``` \
+  &emsp;&emsp;Need to find and redact after ```[mail function]``` \
+  &emsp;&emsp;```SMTP=smtp.gmail.com``` \
+  &emsp;&emsp;```smtp_port=465``` \
+  &emsp;&emsp;```sendmail_from = testmurzanicolae@gmail.com``` \
+  &emsp;&emsp;```<!-- if you install xampp in another path set your path -->``` \
+  &emsp;&emsp;```sendmail_path = "\"C:\xampp\sendmail\sendmail.exe\" -t"``` \
+  
 3.
-  Setup Sendmail in Xampp > C:\xampp\sendmail.ini:
-  Need to find and redact positions:
-  smtp_server=smtp.gmail.com
-  smtp_port=465
-  auth_username=testmurzanicolae@gmail.com
-  auth_password=Hebydusaq1995
-  force_sender=testmurzanicolae@gmail.com
+  &emsp;&emsp;Setup Sendmail in Xampp > ```C:\xampp\sendmail.ini:```\
+  &emsp;&emsp;Need to find and redact positions:\
+  &emsp;&emsp;```smtp_server=smtp.gmail.com```\
+  &emsp;&emsp;```smtp_port=465```\
+  &emsp;&emsp;```auth_username=testmurzanicolae@gmail.com```\
+  &emsp;&emsp;```auth_password=Hebydusaq1995```\
+  &emsp;&emsp;```force_sender=testmurzanicolae@gmail.com```
 
 4.
-  Setup http://localhost/phpmyadmin/
-  in project folder find MySite/indrivo.sql
-  upload "indrivo.sql" in http://localhost/phpmyadmin/
-  i use in this project default creditials from phpmyadmin: (username="root",password="")
+  &emsp;&emsp;Setup ```http://localhost/phpmyadmin/``` \
+  &emsp;&emsp;in project folder find file ```MySite/indrivo.sql``` \
+  &emsp;&emsp;upload "indrivo.sql" in ```http://localhost/phpmyadmin/ ```\
+  &emsp;&emsp;i use in this project default creditials from phpmyadmin: ```(username="root",password="") ```
 
 5.
- //(if you install xampp in another path set your path)
-Copy project folder "MySite" > C:/xampp/htdocs/  
-Test if site is up >> http://localhost/    
-//(if you http port 80 is in use, you can use any other
-just redact httpd.conf file: find: Listen 80 and ghange it,
-// recomand to use in range 81-89 to avoid port conflicts)
-//restart apache after this
+ &emsp;&emsp; ```<!--if you install xampp in another path set your path-->``` \
+ &emsp;&emsp;Copy project folder "MySite" in path ```C:/xampp/htdocs/``` looks like ```C:/xampp/htdocs/MySite/...``` \
+ &emsp;&emsp;Test if site is up >> ```http://localhost/``` \
+ &emsp;&emsp;```<!--if you http port 80 is in use, you can use any other -->``` \
+ &emsp;&emsp;```<!--just redact httpd.conf file: find: Listen 80 and ghange it, -->``` \
+ &emsp;&emsp;```<!--recomand to use in range 81-89 to avoid port conflicts -->``` </br>
+&emsp;&emsp;```Restart apache after this ```
 
-//--------------//
-6.For link work from email we need to change some in code:
-  6.1 ../controller/register.php
-    change this line:
-    http://93.113.64.122:33331/controller/verify-mail.php?email='.$email.'&hash='.$hash.'
-    to 
-    http://localhost(:(you custom port without quotes))/controller/verify-mail.php?email='.$email.'&hash='.$hash.'
+6.
+  &emsp;For link work from email we need to change some in code: \
+  </br>
+    &emsp;&emsp;6.1 \
+      &emsp;&emsp;&emsp;&emsp;Find file ```MySite/controller/register.php``` \
+      &emsp;&emsp;&emsp;&emsp;change this line: \
+      &emsp;&emsp;&emsp;&emsp;```http://93.113.64.122:33331/controller/verify-mail.php?email='.$email.'&hash='.$hash.'``` \
+      &emsp;&emsp;&emsp;&emsp;to \
+      &emsp;&emsp;&emsp;&emsp;```http://localhost<!--: you custom port -->/controller/verify-mail.php?email='.$email.'&hash='.$hash.'```
 
-  6.2 
-    Same for ../controller/restore_password_mail.php
-    change this line: 
-    http://93.113.64.122:33331/view/reset_password.php?
-    to:
-    http://localhost(:(you custom port without quotes))/view/reset_password.php?
+   &emsp;&emsp;6.2 \
+      &emsp;&emsp;&emsp;&emsp;Same for ```MySite/controller/restore_password_mail.php``` \
+      &emsp;&emsp;&emsp;&emsp;change this line: \
+      &emsp;&emsp;&emsp;&emsp;```http://93.113.64.122:33331/view/reset_password.php? ```\
+      &emsp;&emsp;&emsp;&emsp;to: \
+      &emsp;&emsp;&emsp;&emsp;```http://localhost<!--: you custom port -->/view/reset_password.php?```
 
 
 
