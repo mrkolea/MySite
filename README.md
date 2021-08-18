@@ -1,7 +1,7 @@
 # MySite
 This is a simple site with register,login,password_reset > form, include email validation after register and in password reset process. \
 ```Is developed in Xampp on localmashine``` \
-```Some instructions for up site on your mashine if you use windows os``` \
+```Some instructions for up site on your mashine if you use windows os``` 
 
 
 1.
