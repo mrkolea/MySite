@@ -76,8 +76,8 @@
     <link rel="stylesheet" href="../view/css/style.css">
     <title>MySite</title>
 </head>
-<body>
-    <nav class="navbar navbar-light bg-light justify-content-between">
+<body class="bg-light">
+    <nav class="navbar navbar-light bg-white border-bottom justify-content-between">
     <a class="nav-logo-custom" href="../index.php"><h3 class="navbar-brand ">MySite</h3></a>
     <form class="form-inline" action="../view/login.php">
         <button class="btn btn-outline-primary my-2 my-sm-0 login-btn-custom" type="submit">Log In</button>

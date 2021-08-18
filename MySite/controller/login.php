@@ -5,7 +5,6 @@ ini_set('log_errors', '0');
 ini_set('error_log', './');
     session_start();
     $error = null;
-    include ("dbconnection.php");
 
     if ($_SERVER['REQUEST_METHOD'] == 'POST'){
         $email = $_POST['email'];
@@ -34,6 +33,7 @@ ini_set('error_log', './');
             }
         }else{
             $error['data_error'] = "Input some values...";
+            
         }
         
         
@@ -53,11 +53,11 @@ ini_set('error_log', './');
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
     <link rel="stylesheet" href="../view/css/style.css">
-    <title>Document</title>
+    <title>MySite</title>
 </head>
-<body>
-    <nav class="navbar navbar-light bg-light justify-content-between">
-    <a class="nav-logo-custom" href="../index.php"><h3 class="navbar-brand ">Navbar</h3></a>
+<body class="bg-light">
+    <nav class="navbar navbar-light bg-white border-bottom justify-content-between">
+    <a class="nav-logo-custom" href="../index.php"><h3 class="navbar-brand ">MySite</h3></a>
     <form class="form-inline" method="post" action="../view.login.php">
         <button class="btn btn-outline-primary my-2 my-sm-0 login-btn-custom" type="submit">Log In</button>
     </form>
@@ -67,7 +67,7 @@ ini_set('error_log', './');
             <h3 class="d-flex justify-content-center">Enter on portal</h3>
                 <form action="" method="post">
                     <div class="input-group mb-3">
-                    <input type="text" class="form-control" name="email" placeholder="email" aria-label="email" aria-describedby="basic-addon1">
+                    <input type="text" class="form-control" name="email" placeholder="E-mail" aria-label="email" aria-describedby="basic-addon1">
                     </div>
                     <div class="input-group mb-3">
                     <input type="password" class="form-control" name="password" placeholder="Password" aria-label="password" aria-describedby="basic-addon1">

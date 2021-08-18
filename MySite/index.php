@@ -18,7 +18,7 @@ $user_data = check_login($con);
     <title>MySite</title>
 </head>
 <body>
-<nav class="navbar navbar-light bg-light justify-content-between">
+<nav class="navbar navbar-light bg-white border-bottom justify-content-between">
   <a class="nav-logo-custom" href="../index.php"><h3 class="navbar-brand ">MySite</h3></a>
   <form class="form-inline" action="../controller/logout.php">
     <label for=""><?php echo $user_data['first_name'] . " " . $user_data['last_name'];?></label>
