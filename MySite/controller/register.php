@@ -45,8 +45,9 @@ if (isset($fname) && isset($lname) && isset($email) && isset($password)) {
                 
             }
             if (mysqli_num_rows($result) == 0)
-            {
-                $sql = "INSERT INTO users (user_id, first_name, last_name, email, password, hash) VALUES ('$user_id', '$fname', '$lname', '$email', '$password', '$hash')";
+            {   
+                $pwdhash = password_hash($password, PASSWORD_DEFAULT);
+                $sql = "INSERT INTO users (user_id, first_name, last_name, email, password, hash) VALUES ('$user_id', '$fname', '$lname', '$email', '$pwdhash', '$hash')";
                 mysqli_query($con, $sql);
 
 
@@ -62,7 +63,7 @@ if (isset($fname) && isset($lname) && isset($email) && isset($password)) {
                 ------------------------
                 
                 Please click to this link and activate your account:
-                http://www.testmurza.com/controller/verify-mail.php?email='.$email.'&hash='.$hash.'
+                http://93.113.64.122:33331/controller/verify-mail.php?email='.$email.'&hash='.$hash.'
                 
                 '; 
                 $headers = 'FROM: www.testmurza.online  <testmurzanicolae@gmail.com>';                    

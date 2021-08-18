@@ -34,7 +34,7 @@
                         ------------------------
                         
                         Copy Reset Code and click on this link to reset your password:
-                        http://www.testmurza.com/view/reset_password.php?
+                        http://93.113.64.122:33331/view/reset_password.php?
                         
                         '; 
                                             
