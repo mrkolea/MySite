@@ -6,8 +6,9 @@ Some instructions for up site on your mashine if you use windows os
 1.
   Setup Apache "hhtpd.conf":
   Need to find and redact:
-  DocumentRoot "C:/xampp/htdocs/MySite" //(if you install xampp in another path set your path)
-  <Directory "C:/xampp/htdocs/MySite">   //(if you install xampp in another path set your path)
+  //(if you install xampp in another path set your path)
+  DocumentRoot "C:/xampp/htdocs/MySite" 
+  <Directory "C:/xampp/htdocs/MySite">
 
 2.
   Setup Apache "php.ini":
@@ -15,7 +16,8 @@ Some instructions for up site on your mashine if you use windows os
   SMTP=smtp.gmail.com
   smtp_port=465
   sendmail_from = testmurzanicolae@gmail.com
-  sendmail_path = "\"C:\xampp\sendmail\sendmail.exe\" -t" //(if you install xampp in another path set your path)
+  //(if you install xampp in another path set your path)
+  sendmail_path = "\"C:\xampp\sendmail\sendmail.exe\" -t" 
 
 3.
   Setup Sendmail in Xampp > C:\xampp\sendmail.ini:
@@ -32,8 +34,12 @@ Some instructions for up site on your mashine if you use windows os
   upload "indrivo.sql" in http://localhost/phpmyadmin/
   i use in this project default creditials from phpmyadmin: (username="root",password="")
 
-5.Copy project folder "MySite" > C:/xampp/htdocs/   //(if you install xampp in another path set your path)
-Test if site is up >> http://localhost/    //(if you http port 80 is in use, you can use any other just redact httpd.conf file: find: Listen 80 and ghange it,
+5.
+ //(if you install xampp in another path set your path)
+Copy project folder "MySite" > C:/xampp/htdocs/  
+Test if site is up >> http://localhost/    
+//(if you http port 80 is in use, you can use any other
+just redact httpd.conf file: find: Listen 80 and ghange it,
 // recomand to use in range 81-89 to avoid port conflicts)
 //restart apache after this
 
