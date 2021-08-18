@@ -11,6 +11,10 @@
         text-decoration: none;
     }
     
+    .login-link {
+        margin-top: 15px;
+    }
+    
     .login-btn-custom {
         margin-right: 20px;
     }
@@ -34,8 +38,4 @@
     
     .login-name {
         margin-bottom: 50px;
-    }
-    
-    .form-button {
-        margin-bottom: 10px;
     }

@@ -103,7 +103,7 @@ if (isset($fname) && isset($lname) && isset($email) && isset($password)) {
     </nav>
     <div class="container align-items-center w-25 ">
         <div class="">
-            <h3 class="d-flex justify-content-center">Registration</h3>
+            <h3 class="d-flex justify-content-center login-name">Registration</h3>
             
             <form action="../controller/register.php" method="post">
                 <div class="input-group mb-3">

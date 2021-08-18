@@ -22,7 +22,7 @@
         <div class="container align-items-center w-25 ">
             
             <div class="form-container">
-                <h3 class="d-flex justify-content-center login-name">Login</h3>
+                <h3 class="d-flex justify-content-center login-name">Log In</h3>
                 <form action="../controller/login.php" method="POST">
                     <div class="input-group mb-3 ">
                         <input type="text" class="form-control" name="email" placeholder="E-mail" aria-label="email" aria-describedby="basic-addon1">
@@ -31,7 +31,7 @@
                         <input type="password" class="form-control" name="password" placeholder="Password" aria-label="password" aria-describedby="basic-addon1">
                     </div>
                     <div class="col text-center form-button">
-                    <button class="btn btn-outline-primary" type="submit" name="log-in" value="Log In">Log In</button></div><br>
+                    <button class="btn btn-outline-primary" type="submit" name="log-in" value="Log In">Log In</button></div>
                     <!-- <form action="../view/register.php" method="get">
                         <div class="col text-center form-button">
                         <button class="btn btn-outline-success" type="submit" name="log-in" value="Log In">Register</button></div>

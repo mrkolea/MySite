@@ -64,7 +64,7 @@ ini_set('error_log', './');
     </nav>
     <div class="container align-items-center w-25 ">
         <div class="">
-            <h3 class="d-flex justify-content-center">Enter on portal</h3>
+            <h3 class="d-flex justify-content-center login-name">Log In</h3>
                 <form action="" method="post">
                     <div class="input-group mb-3">
                     <input type="text" class="form-control" name="email" placeholder="E-mail" aria-label="email" aria-describedby="basic-addon1">

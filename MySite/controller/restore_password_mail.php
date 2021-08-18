@@ -86,7 +86,7 @@
     <div class="container align-items-center w-25 ">
         <div class="">
             <form action="../controller/restore_password_mail.php" method="POST">
-                <h3 class="d-flex justify-content-center">Forgot password</h3>
+                <h3 class="d-flex justify-content-center login-name">Forgot password</h3>
                 <div class="input-group mb-3">
                 <input type="text" class="form-control" name="email" placeholder="E-mail" aria-label="E-mail" aria-describedby="basic-addon1">
                 </div>
