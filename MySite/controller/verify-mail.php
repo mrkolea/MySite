@@ -4,7 +4,7 @@ include ("functions.php");
 $email = $_GET['email']; 
 $hash = $_GET['hash']; 
               
-if(isset($_GET['email']) || isset($_GET['hash'])){
+if(!empty($_GET['email']) || !empty($_GET['hash'])){
     $sql_select = "SELECT email, hash, email_validation FROM users WHERE email='$email' AND hash='$hash' AND email_validation='0'"; 
     $result = mysqli_query($con, $sql_select);
     if (mysqli_num_rows($result) > 0)

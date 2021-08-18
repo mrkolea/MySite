@@ -18,10 +18,10 @@ if (isset($fname) && isset($lname) && isset($email) && isset($password)) {
             $error['lnameErr'] = "Insert last name only leters";
         }
         if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-            $error['emailiErr'] = "Email address '$email' is invalid.";
+            $error['emailiErr'] = "E-mail address '$email' is invalid.";
         }
         if (empty($email)){
-            $error['emailErr'] = "Insert email";
+            $error['emailErr'] = "Insert E-mail";
         }
         if (empty($password)){
             $error['passwordErr'] = "Insert password";
@@ -41,7 +41,7 @@ if (isset($fname) && isset($lname) && isset($email) && isset($password)) {
             $result = mysqli_query($con, $sql);
             if (mysqli_num_rows($result) > 0)
             {
-                $error['emailErr'] = 'This email is registred.';
+                $error['emailErr'] = 'This E-mail is registred.';
                 
             }
             if (mysqli_num_rows($result) == 0)

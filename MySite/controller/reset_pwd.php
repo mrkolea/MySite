@@ -2,7 +2,7 @@
 include "dbconnection.php";
 include "functions.php";
 session_start();          
-if (isset($_POST['email']) && isset($_POST['short_code']) && isset($_POST['new_password'])){
+if (!empty($_POST['email']) && !empty($_POST['short_code']) && !empty($_POST['new_password'])){
     $email = $_POST['email']; 
     $reset_code = $_POST['short_code']; 
     $new_password = $_POST['new_password'];

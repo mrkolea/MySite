@@ -38,7 +38,7 @@
                         
                         '; 
                                             
-                        $headers = 'From:noreply@testmurza.online' . "\r\n"; 
+                        $headers = 'FROM: www.testmurza.online  <testmurzanicolae@gmail.com>'; 
                         mail($to, $subject, $message, $headers); 
                         header("Location: ../view/reset_password.php");
                         die;
@@ -49,13 +49,13 @@
                     $error['emailErr2'] = "Access ".$email." and folow link";
                 }else
                 {
-                     $error['emailErr'] = "Email doe's not registred";
+                     $error['emailErr'] = "E-mail doe's not registred";
                 }  
             }  
 
         }else
         {
-            $error['emailErr'] = "Enter mail please";
+            $error['emailErr'] = "Enter E-mail please";
         }
         
         

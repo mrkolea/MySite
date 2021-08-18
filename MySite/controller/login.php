@@ -5,6 +5,7 @@ ini_set('log_errors', '0');
 ini_set('error_log', './');
     session_start();
     $error = null;
+    include ("dbconnection.php");
 
     if ($_SERVER['REQUEST_METHOD'] == 'POST'){
         $email = $_POST['email'];
@@ -27,13 +28,12 @@ ini_set('error_log', './');
                         $error['pwdErr'] = "Wrong password.";
                     } 
                 }else{
-                    $error['emailErr'] = "This e-mail is not registred in our base.";
+                    $error['emailErr'] = "This E-mail is not registred in our base.";
                 } 
                 
             }
         }else{
             $error['data_error'] = "Input some values...";
-            
         }
         
         
@@ -73,7 +73,7 @@ ini_set('error_log', './');
                     <input type="password" class="form-control" name="password" placeholder="Password" aria-label="password" aria-describedby="basic-addon1">
                     </div>
                     <div class="col text-center">
-                    <button class="btn btn-outline-primary" type="submit" name="go-in" value="go In">Go In</button>
+                    <button class="btn btn-outline-primary" type="submit" name="go-in" value="go In">Log In</button>
                 <h6 class="d-flex justify-content-center login-link"><a href="../view/register.php">Register</a></h6>
                 <h6 class="d-flex justify-content-center login-link"><a href="../view/restore_pasword.php">Forgot password...</a></h6>
                 </form>
