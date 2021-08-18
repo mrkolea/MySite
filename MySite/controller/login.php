@@ -1,26 +1,24 @@
 <?php
-error_reporting(E_ALL & E_STRICT);
-ini_set('display_errors', '1');
-ini_set('log_errors', '0');
-ini_set('error_log', './');
     session_start();
     $error = null;
     include ("dbconnection.php");
-
+    //init data from login form
     if ($_SERVER['REQUEST_METHOD'] == 'POST'){
         $email = $_POST['email'];
         $password = $_POST['password'];
+        //check input if not empty
         if (!empty($email) && !empty($password) && !is_numeric($email))
-        {
+        {   //db query  email_validation status
             $query = "SELECT * FROM users WHERE email='$email' AND email_validation='1' LIMIT 1";
             $result = mysqli_query($con, $query);
             if ($result)
-            {
+            {   //if result > 0 pass login
                 if ($result && mysqli_num_rows($result) > 0 )
                 {
                     $user_data = mysqli_fetch_assoc($result);
-                    if ($user_data['password'] === $password)
-                    {
+                    // check if password is true
+                    if (password_verify($password, $user_data['password']))
+                    {   // init id for login session
                         $_SESSION['user_id'] = $user_data['user_id'];
                         header("Location: ../index.php");
                         die;

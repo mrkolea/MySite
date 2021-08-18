@@ -20,7 +20,7 @@ function check_login($con)
     die;
 }
 
-//create a random user id
+//create a random user id for register form
 function random_id($lenght)
 {
     $text = "";
