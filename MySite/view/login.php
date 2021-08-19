@@ -19,28 +19,24 @@
         <button class="btn btn-outline-primary my-2 my-sm-0 login-btn-custom" type="submit">Log In</button>
     </form>
     </nav>
-        <div class="container align-items-center w-25 ">
-            
-            <div class="form-container">
-                <h3 class="d-flex justify-content-center login-name">Log In</h3>
-                <form action="../controller/login.php" method="POST">
-                    <div class="input-group mb-3 ">
-                        <input type="text" class="form-control" name="email" placeholder="E-mail" aria-label="email" aria-describedby="basic-addon1">
-                    </div>
-                    <div class="input-group mb-3 ">
-                        <input type="password" class="form-control" name="password" placeholder="Password" aria-label="password" aria-describedby="basic-addon1">
-                    </div>
-                    <div class="col text-center form-button">
-                    <button class="btn btn-outline-primary" type="submit" name="log-in" value="Log In">Log In</button></div>
-                    <!-- <form action="../view/register.php" method="get">
-                        <div class="col text-center form-button">
-                        <button class="btn btn-outline-success" type="submit" name="log-in" value="Log In">Register</button></div>
-                    </form> -->
-                    
-                </form>
-                <h6 class="d-flex justify-content-center login-link"><a href="../view/register.php">Register</a></h6>
-                <h6 class="d-flex justify-content-center login-link"><a href="../view/restore_password_send_mail.php">Forgot password...</a></h6>
-            </div>
-        </div> 
+    <div class="container align-items-center w-25 ">
+        
+        <div class="">
+            <h3 class="d-flex justify-content-center login-name">Log In</h3>
+            <form action="../controller/login.php" method="POST">
+                <div class="input-group mb-3 ">
+                    <input type="text" class="form-control" name="email" placeholder="E-mail" aria-label="email" aria-describedby="basic-addon1">
+                </div>
+                <div class="input-group mb-3 ">
+                    <input type="password" class="form-control" name="password" placeholder="Password" aria-label="password" aria-describedby="basic-addon1">
+                </div>
+                <div class="col text-center form-button">
+                <button class="btn btn-outline-primary" type="submit" name="log-in" value="Log In">Log In</button>
+                </div>
+            </form>
+            <h6 class="d-flex justify-content-center login-link"><a href="../view/register.php">Register</a></h6>
+            <h6 class="d-flex justify-content-center login-link"><a href="../view/restore_password_send_mail.php">Forgot password...</a></h6>
+        </div>
+    </div> 
 </body>
 </html>

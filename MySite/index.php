@@ -1,10 +1,8 @@
 <?php
 include "controller/dbconnection.php";
 include "controller/functions.php";
-
 session_start();
 $user_data = check_login($con);
-
 ?>
 
 <!DOCTYPE html>
@@ -26,7 +24,7 @@ $user_data = check_login($con);
   </form>
 </nav>
 <div class="container align-items-center w-25">
-    <h1 class="text-center">Congrats, you are log-in now.</h1>
+    <h1 class="text-center">Congratulations</h1><br><h2 class="text-center"><?php echo "\o/." . $user_data['first_name'] . " " . $user_data['last_name'] . ".\o/";?></h2><br><h3 class="text-center">you have logged in.</h3>
     <img class="rounded mx-auto d-block" src="https://media2.giphy.com/media/g9582DNuQppxC/200.gif" alt="" srcset="">
 </div>
 </body>

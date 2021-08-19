@@ -3,11 +3,11 @@ error_reporting(E_ALL & E_STRICT);
 ini_set('display_errors', '1');
 ini_set('log_errors', '0');
 ini_set('error_log', './');
-    session_start();
-    $error = null;
-    include ("dbconnection.php");
+session_start();
+$error = null;
+include ("dbconnection.php");
 
-    if ($_SERVER['REQUEST_METHOD'] == 'POST'){
+    if (isset($_POST['email']) && isset($_POST['password'])){
         $email = $_POST['email'];
         $password = $_POST['password'];
         if (!empty($email) && !empty($password) && !is_numeric($email))
@@ -22,6 +22,7 @@ ini_set('error_log', './');
                     if (password_verify($password, $user_data['password']))
                     {
                         $_SESSION['user_id'] = $user_data['user_id'];
+                        // echo $_SESSION['user_id'];
                         header("Location: ../index.php");
                         die;
                     }else{

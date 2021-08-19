@@ -3,7 +3,8 @@ include ("dbconnection.php");
 //check if user is loged in
 //if yes then retun data
 function check_login($con)
-{
+
+{   
     if (isset($_SESSION['user_id']))
     {
         $id = $_SESSION['user_id'];
@@ -14,10 +15,13 @@ function check_login($con)
             $user_data = mysqli_fetch_assoc($result);
             return $user_data;
         }
+    }else
+    {
+        header("Location: ../view/login.php");
+        die;
     }
     //if not redirect him on login page
-    header("Location: ../view/login.php");
-    die;
+    
 }
 
 //create a random user id

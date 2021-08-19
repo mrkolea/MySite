@@ -17,7 +17,6 @@
                     if ($user_data['email'] === $email)
                     {   
                         $short_code = random_id(6);
-                        echo $short_code;
                         $sql = "UPDATE users SET short_code_reset='".$short_code."' WHERE email='".$email."' ";
                         mysqli_query($con, $sql);
                 

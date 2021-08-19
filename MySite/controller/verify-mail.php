@@ -11,7 +11,7 @@ if(!empty($_GET['email']) || !empty($_GET['hash'])){
     {
         $sql_update = "UPDATE users SET email_validation='1' WHERE email='$email' AND hash='$hash' AND email_validation='0'";
         $result = mysqli_query($con, $sql_update);
-        header("Location: http://testmurza.online");
+        header("Location: ../view/login.php");
         die;
     }else {
         echo "link is unavaible";
