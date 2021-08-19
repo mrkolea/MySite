@@ -47,10 +47,10 @@ include ("dbconnection.php");
 </head>
 <body class="bg-light">
     <nav class="navbar navbar-light bg-white border-bottom justify-content-between">
-    <a class="nav-logo-custom" href="../index.php"><h3 class="navbar-brand ">MySite</h3></a>
-    <form class="form-inline" method="post" action="../view.login.php">
-        <button class="btn btn-outline-primary my-2 my-sm-0 login-btn-custom" type="submit">Log In</button>
-    </form>
+        <a class="nav-logo-custom" href="../index.php"><h3 class="navbar-brand ">MySite</h3></a>
+        <form class="form-inline" method="post" action="../view.login.php">
+            <button class="btn btn-outline-primary my-2 my-sm-0 login-btn-custom" type="submit">Log In</button>
+        </form>
     </nav>
     <div class="container align-items-center w-25 ">
         <div class="">
@@ -68,17 +68,17 @@ include ("dbconnection.php");
                 <h6 class="d-flex justify-content-center login-link"><a href="../view/restore_pasword.php">Forgot password...</a></h6>
                 </form>
                 <?php if ($error !== null): ?>
-                        <div class="alert alert-warning alert-warning-custom">
-                        <strong>Warning!</strong><br>
-                        <div class="alert alert-danger">
-                            <?php foreach ($error as $value): ?>
-                            <li>
-                            <?php echo $value; ?>
-                            </li>
-                            <?php endforeach;?>
-                        </div>
+                <div class="alert alert-warning alert-warning-custom">
+                <strong>Warning!</strong><br>
+                    <div class="alert alert-danger">
+                        <?php foreach ($error as $value): ?>
+                        <li>
+                        <?php echo $value; ?>
+                        </li>
+                        <?php endforeach;?>
+                    </div>
                 <?php endif;?>
-            </div>
+                </div>
         </div>
     </div>
 </body>

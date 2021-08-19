@@ -63,17 +63,17 @@ if (isset($_POST['email'])) {
 </head>
 <body class="bg-light">
     <nav class="navbar navbar-light bg-white border-bottom justify-content-between">
-    <a class="nav-logo-custom" href="../index.php"><h3 class="navbar-brand ">MySite</h3></a>
-    <form class="form-inline" action="../view/login.php">
-        <button class="btn btn-outline-primary my-2 my-sm-0 login-btn-custom" type="submit">Log In</button>
-    </form>
+        <a class="nav-logo-custom" href="../index.php"><h3 class="navbar-brand ">MySite</h3></a>
+        <form class="form-inline" action="../view/login.php">
+            <button class="btn btn-outline-primary my-2 my-sm-0 login-btn-custom" type="submit">Log In</button>
+        </form>
     </nav>
     <div class="container align-items-center w-25 ">
         <div class="">
             <form action="../controller/restore_password_mail.php" method="POST">
                 <h3 class="d-flex justify-content-center login-name">Forgot password</h3>
                 <div class="input-group mb-3">
-                <input type="text" class="form-control" name="email" placeholder="E-mail" aria-label="E-mail" aria-describedby="basic-addon1">
+                    <input type="text" class="form-control" name="email" placeholder="E-mail" aria-label="E-mail" aria-describedby="basic-addon1">
                 </div>
                 <div class="col text-center">
                     <button class="btn btn-outline-primary" type="submit" name="reset_pwd" value="reset_pwd">Send Instruction</button>
@@ -81,22 +81,17 @@ if (isset($_POST['email'])) {
                 <h6 class="d-flex justify-content-center login-link"><a href="../view/register.php">Register</a></h6>
             </form>
             <?php if ($error !== null): ?>
-                <div class="alert alert-warning alert-warning-custom">
-                <strong>Warning!</strong><br>
-                <div class="alert alert-danger">
-                    <?php foreach ($error as $value): ?>
-                    <li>
-                    <?php echo $value; ?>
-                    </li>
-                    <?php endforeach;?>
-                </div>
-                <?php endif;?>
-                </div>
-                <?php if ($error == null ): ?>
-                    <div class="alert alert-success alert-warning-custom"> 
-                    <strong>Registred!</strong>
-                    </div>
-                    <?php endif;?>
+            <div class="alert alert-warning alert-warning-custom">
+            <strong>Warning!</strong><br>
+            <div class="alert alert-danger">
+                <?php foreach ($error as $value): ?>
+                <li>
+                <?php echo $value; ?>
+                </li>
+                <?php endforeach;?>
+            </div>
+            <?php endif;?>
+            </div>
         </div>
     </div>
 </body>

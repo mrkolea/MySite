@@ -13,15 +13,14 @@
 </head>
 <body class="bg-light">
     <nav class="navbar navbar-light bg-white border-bottom justify-content-between">
-    <a class="nav-logo-custom" href="../index.php"><h3 class="navbar-brand ">MySite</h3></a>
-    <form class="form-inline" action="login.php">
-        <button class="btn btn-outline-primary my-2 my-sm-0 login-btn-custom" type="submit">Log In</button>
-    </form>
+        <a class="nav-logo-custom" href="../index.php"><h3 class="navbar-brand ">MySite</h3></a>
+        <form class="form-inline" action="login.php">
+            <button class="btn btn-outline-primary my-2 my-sm-0 login-btn-custom" type="submit">Log In</button>
+        </form>
     </nav>
     <div class="container align-items-center w-25 ">
         <div class="">
             <h3 class="d-flex justify-content-center login-name">Registration</h3>
-            
             <form action="../controller/register.php" method="post">
                 <div class="input-group mb-3">
                 <input type="text" class="form-control" name="fname" placeholder="First Name" aria-label="Username" aria-describedby="basic-addon1">
@@ -43,7 +42,6 @@
                     <button class="btn btn-outline-primary" type="submit" name="sign-in" value="Sign In">Sign In</button>
                 </div>
             </form>
-            
             <h6 class="d-flex justify-content-center login-link"><a href="/view/login.php">Log In</a></h6>
         </div>
     </div>

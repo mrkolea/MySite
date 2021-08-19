@@ -14,13 +14,12 @@
 </head>
 <body class="bg-light">
     <nav class="navbar navbar-light nav-color bg-white border-bottom justify-content-between">
-    <a class="nav-logo-custom" href="../index.php"><h3 class="navbar-brand ">MySite</h3></a>
-    <form class="form-inline" action="login.php">
-        <button class="btn btn-outline-primary my-2 my-sm-0 login-btn-custom" type="submit">Log In</button>
-    </form>
+        <a class="nav-logo-custom" href="../index.php"><h3 class="navbar-brand ">MySite</h3></a>
+        <form class="form-inline" action="login.php">
+            <button class="btn btn-outline-primary my-2 my-sm-0 login-btn-custom" type="submit">Log In</button>
+        </form>
     </nav>
     <div class="container align-items-center w-25 ">
-        
         <div class="">
             <h3 class="d-flex justify-content-center login-name">Log In</h3>
             <form action="../controller/login.php" method="POST">

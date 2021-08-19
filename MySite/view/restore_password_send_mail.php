@@ -11,10 +11,10 @@
 </head>
 <body class="bg-light">
     <nav class="navbar navbar-light bg-white border-bottom justify-content-between">
-    <a class="nav-logo-custom" href="../index.php"><h3 class="navbar-brand ">MySite</h3></a>
-    <form class="form-inline" action="../view/login.php">
-        <button class="btn btn-outline-primary my-2 my-sm-0 login-btn-custom" type="submit">Log In</button>
-    </form>
+        <a class="nav-logo-custom" href="../index.php"><h3 class="navbar-brand ">MySite</h3></a>
+        <form class="form-inline" action="../view/login.php">
+            <button class="btn btn-outline-primary my-2 my-sm-0 login-btn-custom" type="submit">Log In</button>
+        </form>
     </nav>
     <div class="container align-items-center w-25 ">
         <div class="">
@@ -24,11 +24,9 @@
                 <input type="text" class="form-control" name="email" placeholder="E-mail" aria-label="E-mail" aria-describedby="basic-addon1">
                 </div>
                 <div class="col text-center">
-                    <button class="btn btn-outline-primary" type="submit" name="reset_pwd" value="reset_pwd">Send Instruction</button>
-                    
+                    <button class="btn btn-outline-primary" type="submit" name="reset_pwd" value="reset_pwd">Send Instruction</button>  
                 </div>
             </form>
-            
         </div>
     </div>
 </body>

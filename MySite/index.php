@@ -16,16 +16,16 @@ $user_data = check_login($con);
     <title>MySite</title>
 </head>
 <body>
-<nav class="navbar navbar-light bg-white border-bottom justify-content-between">
-  <a class="nav-logo-custom" href="../index.php"><h3 class="navbar-brand ">MySite</h3></a>
-  <form class="form-inline" action="../controller/logout.php">
-    <label for=""><?php echo $user_data['first_name'] . " " . $user_data['last_name'];?></label>
-    <button class="btn btn-outline-primary my-2 my-sm-0 login-btn-custom" type="submit">Log Out</button>
-  </form>
-</nav>
-<div class="container align-items-center w-25">
-    <h1 class="text-center">Congratulations</h1><br><h2 class="text-center"><?php echo "\o/." . $user_data['first_name'] . " " . $user_data['last_name'] . ".\o/";?></h2><br><h3 class="text-center">you have logged in.</h3>
-    <img class="rounded mx-auto d-block" src="https://media2.giphy.com/media/g9582DNuQppxC/200.gif" alt="" srcset="">
-</div>
+  <nav class="navbar navbar-light bg-white border-bottom justify-content-between">
+    <a class="nav-logo-custom" href="../index.php"><h3 class="navbar-brand ">MySite</h3></a>
+    <form class="form-inline" action="../controller/logout.php">
+      <label for=""><?php echo $user_data['first_name'] . " " . $user_data['last_name'];?></label>
+      <button class="btn btn-outline-primary my-2 my-sm-0 login-btn-custom" type="submit">Log Out</button>
+    </form>
+  </nav>
+  <div class="container align-items-center w-25">
+      <h1 class="text-center">Congratulations</h1><br><h2 class="text-center"><?php echo "\o/." . $user_data['first_name'] . " " . $user_data['last_name'] . ".\o/";?></h2><br><h3 class="text-center">you have logged in.</h3>
+      <img class="rounded mx-auto d-block" src="https://media2.giphy.com/media/g9582DNuQppxC/200.gif" alt="" srcset="">
+  </div>
 </body>
 </html>

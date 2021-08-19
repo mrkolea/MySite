@@ -84,29 +84,26 @@ if (isset($fname) && isset($lname) && isset($email) && isset($password)) {
 </head>
 <body class="bg-light">
     <nav class="navbar navbar-light bg-white border-bottom justify-content-between">
-    <a class="nav-logo-custom" href="../index.php"><h3 class="navbar-brand ">MySite</h3></a>
-    <form class="form-inline" action="../view/login.php">
-        <button class="btn btn-outline-primary my-2 my-sm-0 login-btn-custom" type="submit">Log In</button>
-    </form>
+        <a class="nav-logo-custom" href="../index.php"><h3 class="navbar-brand ">MySite</h3></a>
+        <form class="form-inline" action="../view/login.php">
+            <button class="btn btn-outline-primary my-2 my-sm-0 login-btn-custom" type="submit">Log In</button>
+        </form>
     </nav>
     <div class="container align-items-center w-25 ">
         <div class="">
             <h3 class="d-flex justify-content-center login-name">Registration</h3>
-            
             <form action="../controller/register.php" method="post">
                 <div class="input-group mb-3">
-                <input type="text" class="form-control" name="fname" placeholder="First Name" value="<?php echo $fname;?>" aria-label="Username" aria-describedby="basic-addon1">
-                
-                </div>
-
-                <div class="input-group mb-3">
-                <input type="text" class="form-control" name="lname" placeholder="Last Name" value="<?php echo $lname;?>" aria-label="Username" aria-describedby="basic-addon1">
+                    <input type="text" class="form-control" name="fname" placeholder="First Name" value="<?php echo $fname;?>" aria-label="Username" aria-describedby="basic-addon1">
                 </div>
                 <div class="input-group mb-3">
-                <input type="text" class="form-control" name="email" placeholder="E-mail" value="<?php echo $email;?>" aria-label="Username" aria-describedby="basic-addon1">
+                    <input type="text" class="form-control" name="lname" placeholder="Last Name" value="<?php echo $lname;?>" aria-label="Username" aria-describedby="basic-addon1">
                 </div>
                 <div class="input-group mb-3">
-                <input type="password" class="form-control" name="password" placeholder="Password" aria-label="Username" aria-describedby="basic-addon1">
+                    <input type="text" class="form-control" name="email" placeholder="E-mail" value="<?php echo $email;?>" aria-label="Username" aria-describedby="basic-addon1">
+                </div>
+                <div class="input-group mb-3">
+                    <input type="password" class="form-control" name="password" placeholder="Password" aria-label="Username" aria-describedby="basic-addon1">
                 </div>
                 <div class="col text-center">
                     <button class="btn btn-outline-primary" type="submit" name="sign-in" value="Sign In">Sign In</button>
@@ -114,22 +111,17 @@ if (isset($fname) && isset($lname) && isset($email) && isset($password)) {
                 <h6 class="d-flex justify-content-center login-link"><a href="../view/login.php">Log In</a></h6>
             </form>
             <?php if ($error !== null): ?>
-                <div class="alert alert-warning alert-warning-custom">
-                <strong>Warning!</strong><br>
-                <div class="alert alert-danger">
-                    <?php foreach ($error as $value): ?>
-                    <li>
-                    <?php echo $value; ?>
-                    </li>
-                    <?php endforeach;?>
-                </div>
-                <?php endif;?>
-                </div>
-                <?php if ($error == null ): ?>
-                    <div class="alert alert-success alert-warning-custom"> 
-                    <strong>Registred!</strong>
-                    </div>
-                    <?php endif;?>
+            <div class="alert alert-warning alert-warning-custom">
+            <strong>Warning!</strong><br>
+            <div class="alert alert-danger">
+                <?php foreach ($error as $value): ?>
+                <li>
+                <?php echo $value; ?>
+                </li>
+                <?php endforeach;?>
+            </div>
+            <?php endif;?>
+            </div>
         </div>
     </div>
 </body>
