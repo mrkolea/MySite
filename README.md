@@ -31,7 +31,7 @@ This is a simple site with register,login,password_reset > form, include email v
 
 4.
   &emsp;&emsp;Setup ```http://localhost/phpmyadmin/``` \
-  &emsp;&emsp;in project folder find file ```MySite/indrivo.sql``` \
+  &emsp;&emsp;in project folder find file ```MySite/db_dump/indrivo.sql``` \
   &emsp;&emsp;upload "indrivo.sql" in ```http://localhost/phpmyadmin/ ```\
   &emsp;&emsp;i use in this project default creditials from phpmyadmin: ```(username="root",password="") ```
 
