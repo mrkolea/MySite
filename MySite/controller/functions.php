@@ -3,24 +3,20 @@ include ("dbconnection.php");
 //check if user is loged in
 //if yes then retun data
 function check_login($con)
-
 {   
-    if (isset($_SESSION['user_id']))
-    {
+    if (isset($_SESSION['user_id'])) {
         $id = $_SESSION['user_id'];
         $sql = "SELECT * FROM users WHERE user_id = '$id' ";
         $result = mysqli_query($con, $sql);
-        if ($result && mysqli_num_rows($result) > 0 )
-        {
+        if ($result && mysqli_num_rows($result) > 0 ) {
             $user_data = mysqli_fetch_assoc($result);
             return $user_data;
         }
-    }else
-    {
+    } else {
         header("Location: ../view/login.php");
         die;
     }
-    //if not redirect him on login page
+    //if not redirect him to login page
     
 }
 
@@ -28,8 +24,7 @@ function check_login($con)
 function random_id($lenght)
 {
     $text = "";
-    if ($lenght < 5)
-    {
+    if ($lenght < 5) {
         $lenght = 5;
     }
     $len = rand(4, $lenght);

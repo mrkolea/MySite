@@ -1,69 +1,55 @@
 <?php
-    include "dbconnection.php";
-    include "functions.php";
-    if (isset($_POST['email'])){
-        $email = $_POST['email'];
-        if (!empty($email) && !is_numeric($email))
-        {
-            $query = "SELECT * FROM users WHERE email='".$email."' AND email_validation='1' LIMIT 1";
-            $result = mysqli_query($con, $query);
-            $query_active = "SELECT * FROM users WHERE email='".$email."' AND email_validation='0' LIMIT 1";
-            $result_active = mysqli_query($con, $query_active);
-            if ($result)
-            {
-                if ($result && mysqli_num_rows($result) > 0 )
-                {
-                    $user_data = mysqli_fetch_assoc($result);
-                    if ($user_data['email'] === $email)
-                    {   
-                        $short_code = random_id(6);
-                        $sql = "UPDATE users SET short_code_reset='".$short_code."' WHERE email='".$email."' ";
-                        mysqli_query($con, $sql);
-                
-                
-                        //send verification email
-                        $to      = $email; 
-                        $subject = 'Reset Password MySite account'; 
-                        $message = '
-                        Welcome to MySite by Murza Nicolae
-                        
-                        ------------------------
-                        Username: '.$email.'
-                        Reset Code: ' . $short_code . '
-                        ------------------------
-                        
-                        Copy Reset Code and click on this link to reset your password:
-                        http://93.113.64.122:33331/view/reset_password.php?
-                        
-                        '; 
-                                            
-                        $headers = 'FROM: MySite - Murza  <testmurzanicolae@gmail.com>'; 
-                        mail($to, $subject, $message, $headers); 
-                        header("Location: ../view/reset_password.php");
-                        die;
-                    }
-                }if ($result_active && mysqli_num_rows($result_active) > 0 )
-                {
-                    $error['emailErr1'] = "Account need to be activated,";
-                    $error['emailErr2'] = "Access ".$email." and folow link";
-                }else
-                {
-                     $error['emailErr'] = "E-mail doe's not registred";
-                }  
+include "dbconnection.php";
+include "functions.php";
+if (isset($_POST['email'])) {
+    $email = $_POST['email'];
+    if (!empty($email) && !is_numeric($email)) {
+        $query = "SELECT * FROM users WHERE email='".$email."' AND email_validation='1' LIMIT 1";
+        $result = mysqli_query($con, $query);
+        $query_active = "SELECT * FROM users WHERE email='".$email."' AND email_validation='0' LIMIT 1";
+        $result_active = mysqli_query($con, $query_active);
+        if ($result) {
+            if ($result && mysqli_num_rows($result) > 0 ) {
+                $user_data = mysqli_fetch_assoc($result);
+                if ($user_data['email'] === $email) {   
+                    $short_code = random_id(6);
+                    $sql = "UPDATE users SET short_code_reset='".$short_code."' WHERE email='".$email."' ";
+                    mysqli_query($con, $sql);
+            
+                    //Mail template for send verification email
+                    $to      = $email; 
+                    $subject = 'Reset Password MySite account'; 
+                    $message = '
+                    Welcome to MySite by Murza Nicolae
+                    
+                    ------------------------
+                    Username: '.$email.'
+                    Reset Code: ' . $short_code . '
+                    ------------------------
+                    
+                    Copy Reset Code and click on this link to reset your password:
+                    http://93.113.64.122:33331/view/reset_password.php?
+                    
+                    '; 
+                                        
+                    $headers = 'FROM: MySite - Murza  <testmurzanicolae@gmail.com>'; 
+                    mail($to, $subject, $message, $headers); 
+                    header("Location: ../view/reset_password.php");
+                    die;
+                }
+            }
+            if ($result_active && mysqli_num_rows($result_active) > 0 ) {
+                $error['emailErr1'] = "Account need to be activated,";
+                $error['emailErr2'] = "Access ".$email." and folow link";
+            } else {
+                $error['emailErr'] = "E-mail doe's not registred";
             }  
-
-        }else
-        {
-            $error['emailErr'] = "Enter E-mail please";
-        }
-        
-        
-
+        }  
+    } else {
+        $error['emailErr'] = "Enter E-mail please";
     }
-
-    
-        
-    ?>
+}
+?>
 
 <!DOCTYPE html>
 <html lang="en">

@@ -7,43 +7,32 @@ session_start();
 $error = null;
 include ("dbconnection.php");
 
-    if (isset($_POST['email']) && isset($_POST['password'])){
+    if (isset($_POST['email']) && isset($_POST['password'])) {
         $email = $_POST['email'];
         $password = $_POST['password'];
-        if (!empty($email) && !empty($password) && !is_numeric($email))
-        {
+        if (!empty($email) && !empty($password) && !is_numeric($email)) {
             $query = "SELECT * FROM users WHERE email='$email' AND email_validation='1' LIMIT 1";
             $result = mysqli_query($con, $query);
-            if ($result)
-            {
-                if ($result && mysqli_num_rows($result) > 0 )
-                {
+            if ($result) {
+                if ($result && mysqli_num_rows($result) > 0 ) {
                     $user_data = mysqli_fetch_assoc($result);
-                    if (password_verify($password, $user_data['password']))
-                    {
+                    if (password_verify($password, $user_data['password'])) {
                         $_SESSION['user_id'] = $user_data['user_id'];
                         // echo $_SESSION['user_id'];
                         header("Location: ../index.php");
                         die;
-                    }else{
-                        $error['pwdErr'] = "Wrong password.";
+                    } else {
+                            $error['pwdErr'] = "Wrong password.";
                     } 
-                }else{
-                    $error['emailErr'] = "This E-mail is not registred in our base.";
-                } 
-                
+                } else {
+                        $error['emailErr'] = "This E-mail is not registred in our base.";
+                }    
             }
-        }else{
-            $error['data_error'] = "Input some values...";
+        } else {
+                $error['data_error'] = "Input some values...";
         }
-        
-        
-
     }
-
-    
-        
-    ?>
+?>
 
 
 <!DOCTYPE html>

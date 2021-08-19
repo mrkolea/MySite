@@ -11,77 +11,65 @@ $user_id = random_id(10);
 $hash = md5( rand(0,1000) );
 if (isset($fname) && isset($lname) && isset($email) && isset($password)) {
 
-        if (empty($fname) || is_numeric($fname)){
-            $error['fnameErr'] = "Insert first name only leters";
-        }
-        if (empty($lname) ||  is_numeric($lname)){
-            $error['lnameErr'] = "Insert last name only leters";
-        }
-        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-            $error['emailiErr'] = "E-mail address '$email' is invalid.";
-        }
-        if (empty($email)){
-            $error['emailErr'] = "Insert E-mail";
-        }
-        if (empty($password)){
-            $error['passwordErr'] = "Insert password";
-        }
-        if (preg_match('/[^A-Za-z0-9А-Яа-яЁё]/u', $fname)){
-            $error['fnameErr'] = "first-name Use only leters or numbers";
-        }
-        if (preg_match('/[^A-Za-z0-9А-Яа-яЁё]/u', $lname)){
-            $error['lnameErr'] = "last-name Use only leters or numbers";
-        }
-        if (strlen($password) < 8){
-            $error['passwordErr'] = "Use minimum 8 characters for password";
-        }
-        else
-        {
-            $sql = "SELECT * FROM users WHERE email='$email' LIMIT 1";
-            $result = mysqli_query($con, $sql);
-            if (mysqli_num_rows($result) > 0)
-            {
-                $error['emailErr'] = 'This E-mail is registred.';
-                
-            }
-            if (mysqli_num_rows($result) == 0)
-            {   
-                $pwdhash = password_hash($password, PASSWORD_DEFAULT);
-                $sql = "INSERT INTO users (user_id, first_name, last_name, email, password, hash) VALUES ('$user_id', '$fname', '$lname', '$email', '$pwdhash', '$hash')";
-                mysqli_query($con, $sql);
-
-
-                
-                $to      = $email; 
-                $subject = 'Activate MySite account'; 
-                $message = '
-                Welcome to MySite by Murza Nicolae
-                
-                ------------------------
-                Username: '.$email.'
-                
-                ------------------------
-                
-                Please click to this link and activate your account:
-                http://93.113.64.122:33331/controller/verify-mail.php?email='.$email.'&hash='.$hash.'
-                
-                '; 
-                $headers = 'FROM: MySite - Murza  <testmurzanicolae@gmail.com>';                    
-                mail($to, $subject, $message, $headers); 
-                header("Location: ../view/check_email_message.php");
-                die;
-                
+    if (empty($fname) || is_numeric($fname)) {
+        $error['fnameErr'] = "Insert first name only leters";
+    }
+    if (empty($lname) ||  is_numeric($lname)) {
+        $error['lnameErr'] = "Insert last name only leters";
+    }
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $error['emailiErr'] = "E-mail address '$email' is invalid.";
+    }
+    if (empty($email)) {
+        $error['emailErr'] = "Insert E-mail";
+    }
+    if (empty($password)) {
+        $error['passwordErr'] = "Insert password";
+    }
+    if (preg_match('/[^A-Za-z0-9А-Яа-яЁё]/u', $fname)) {
+        $error['fnameErr'] = "first-name Use only leters or numbers";
+    }
+    if (preg_match('/[^A-Za-z0-9А-Яа-яЁё]/u', $lname)) {
+        $error['lnameErr'] = "last-name Use only leters or numbers";
+    }
+    if (strlen($password) < 8) {
+        $error['passwordErr'] = "Use minimum 8 characters for password";
+    } else {
+        $sql = "SELECT * FROM users WHERE email='$email' LIMIT 1";
+        $result = mysqli_query($con, $sql);
+        if (mysqli_num_rows($result) > 0) {
+            $error['emailErr'] = 'This E-mail is registred.';
             
-            }
         }
-        
+        if (mysqli_num_rows($result) == 0) {   
+            $pwdhash = password_hash($password, PASSWORD_DEFAULT);
+            $sql = "INSERT INTO users (user_id, first_name, last_name, email, password, hash) VALUES ('$user_id', '$fname', '$lname', '$email', '$pwdhash', '$hash')";
+            mysqli_query($con, $sql);
+
+            //Mail template//
+
+            $to      = $email; 
+            $subject = 'Activate MySite account'; 
+            $message = '
+            Welcome to MySite by Murza Nicolae
+            
+            ------------------------
+            Username: '.$email.'
+            
+            ------------------------
+            
+            Please click to this link and activate your account:
+            http://93.113.64.122:33331/controller/verify-mail.php?email='.$email.'&hash='.$hash.'
+            
+            '; 
+            $headers = 'FROM: MySite - Murza  <testmurzanicolae@gmail.com>';                    
+            mail($to, $subject, $message, $headers); 
+            header("Location: ../view/check_email_message.php");
+            die;
+        }
+    }    
 }
-
-
 ?>
-
-
-
 
 <!---->
 <!DOCTYPE html>
