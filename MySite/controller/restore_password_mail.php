@@ -23,9 +23,9 @@
                 
                         //send verification email
                         $to      = $email; 
-                        $subject = 'Reset Password testmurza.online account'; 
+                        $subject = 'Reset Password MySite account'; 
                         $message = '
-                        Welcome to testmurza.online
+                        Welcome to MySite by Murza Nicolae
                         
                         ------------------------
                         Username: '.$email.'
@@ -37,7 +37,7 @@
                         
                         '; 
                                             
-                        $headers = 'FROM: www.testmurza.online  <testmurzanicolae@gmail.com>'; 
+                        $headers = 'FROM: MySite - Murza  <testmurzanicolae@gmail.com>'; 
                         mail($to, $subject, $message, $headers); 
                         header("Location: ../view/reset_password.php");
                         die;

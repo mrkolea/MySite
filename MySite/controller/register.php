@@ -53,9 +53,9 @@ if (isset($fname) && isset($lname) && isset($email) && isset($password)) {
 
                 
                 $to      = $email; 
-                $subject = 'Activate testmurza.online account'; 
+                $subject = 'Activate MySite account'; 
                 $message = '
-                Welcome to www.testmurza.online
+                Welcome to MySite by Murza Nicolae
                 
                 ------------------------
                 Username: '.$email.'
@@ -66,7 +66,7 @@ if (isset($fname) && isset($lname) && isset($email) && isset($password)) {
                 http://93.113.64.122:33331/controller/verify-mail.php?email='.$email.'&hash='.$hash.'
                 
                 '; 
-                $headers = 'FROM: www.testmurza.online  <testmurzanicolae@gmail.com>';                    
+                $headers = 'FROM: MySite - Murza  <testmurzanicolae@gmail.com>';                    
                 mail($to, $subject, $message, $headers); 
                 header("Location: ../view/check_email_message.php");
                 die;
